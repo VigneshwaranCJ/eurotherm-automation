@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report Runner</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Report Runner</h1>
+      <p class="sub">SLS733(EUT-01) &middot; channel, pen and message log PDFs for each channel &middot; times in IST (+05:30)</p>
+    </header>
+
+    <section class="card">
+      <h2>Time range</h2>
+      <div class="grid">
+        <fieldset>
+          <legend>Start</legend>
+          <label>Date <input type="date" id="startDate" required></label>
+          <label>Time <input type="time" id="startTime" value="00:00" required></label>
+        </fieldset>
+        <fieldset>
+          <legend>End</legend>
+          <label>Date <input type="date" id="endDate" required></label>
+          <label>Time <input type="time" id="endTime" value="00:00" required></label>
+        </fieldset>
+      </div>
+      <div class="quick">
+        <span>Quick set:</span>
+        <button type="button" class="link" id="wholeDay">Whole day (start date)</button>
+        <button type="button" class="link" data-hours="4">4 hours from start</button>
+        <button type="button" class="link" data-hours="8">8 hours from start</button>
+      </div>
+      <p class="available" id="available" hidden></p>
+      <label class="check"><input type="checkbox" id="showBrowser" checked> Show browser window while it runs</label>
+      <p class="hint" id="browserHint">A Chrome window will open and work by itself. Don't close it or click in it until the run finishes.</p>
+      <p class="summary" id="summary"></p>
+      <div class="actions">
+        <button type="button" id="run" class="primary">Run</button>
+        <button type="button" id="stop" class="secondary" hidden>Stop after current report</button>
+      </div>
+      <p class="message" id="message" role="alert"></p>
+      <div class="notice" id="lockNotice" hidden>
+        <p>A previous run was interrupted and left a lock, which blocks new runs. Its process has already ended, so it is safe to clear.</p>
+        <button type="button" id="clearLock" class="secondary">Clear lock</button>
+      </div>
+    </section>
+
+    <section class="card" id="progressCard" hidden>
+      <div class="row">
+        <h2>Progress</h2>
+        <span class="badge" id="badge"></span>
+      </div>
+      <div class="bar"><div id="barFill"></div></div>
+      <p class="counts" id="counts"></p>
+      <p class="now" id="now"></p>
+      <ul class="activity" id="activity"></ul>
+      <div class="actions">
+        <button type="button" id="openFolder" class="secondary" hidden>Open output folder</button>
+      </div>
+      <p class="path" id="folder"></p>
+    </section>
+
+    <p class="foot">Imports into Reviewer are blocked. Re-running the same dates reuses finished reports and continues an unfinished run; new dates create a new run folder. Closing the Report Runner window does not stop a run.</p>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

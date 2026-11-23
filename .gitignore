@@ -1,0 +1,48 @@
+# ---- Secrets ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---- Data, inputs & generated output (not source code) ----
+Input_uhh_files/
+uhh_files/
+Output_report_files/
+downloads/
+Spinos PDF/
+ReportRunner/runs/
+*.uhh
+
+# ---- Temp / scratch ----
+.test-temp/
+tmp*/
+.tmp/
+logs/
+*.log
+screenshots/
+shots/
+
+# ---- Python ----
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.playwright-browsers/
+
+# ---- Node / Vite ----
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+npm-debug.log*
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store

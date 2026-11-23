@@ -1,0 +1,13 @@
+{
+  "input_dir": "D:\\Ceiyone\\Input_uhh_files",
+  "output_dir": "D:\\Ceiyone\\Output_report_files",
+  "input_file": "",
+  "record_id": "SLS709",
+  "record_field": "",
+  "channels": [
+    { "name": "Exact native channel name 1" },
+    { "name": "Exact native channel name 2 ... through 25" }
+  ],
+  "cursor_statistics": true,
+  "split_by_channel": false
+}
